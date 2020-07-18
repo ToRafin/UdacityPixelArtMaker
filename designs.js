@@ -16,14 +16,14 @@ canvas.addEventListener('submit',function createCanvas(event){
 
 function makeGrid(height, width) {
     let selectedColor = document.getElementById('colorPicker').value;
-    grid.innerHTML = null;
+    grid.innerHTML = null; //resets the grid and the color
     for(let i = 0; i <height; i++){
-        const squareRow = document.createElement('tr');
+        const squareRow = document.createElement('tr'); //creates the rows in the table
         grid.append(squareRow);
         for(let j=0; j < width; j++){
-            const squareColumn = document.createElement('td');
+            const squareColumn = document.createElement('td'); //creates the cells in the row
             squareRow.append(squareColumn);
-            squareColumn.addEventListener('click', function(gridColor){
+            squareColumn.addEventListener('click', function(gridColor){ //event listener for the color selector
                 squareColor = document.getElementById('colorPicker').value;
                 squareColumn.style.backgroundColor = squareColor;
             });
